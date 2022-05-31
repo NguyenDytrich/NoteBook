@@ -1,11 +1,11 @@
 import type { NextPage } from 'next'
 import { Col, Container, Row } from 'react-bootstrap'
-import { Messages } from '../components/Messages'
-import { SharedFiles } from '../components/SharedFiles'
-import Sidebar from '../components/Sidebar'
-import { VideoLessons } from '../components/VideoLessons/'
+import { Messages } from '../../components/Messages'
+import { SharedFiles } from '../../components/SharedFiles'
+import Sidebar from '../../components/Sidebar'
+import { VideoLessons } from '../../components/VideoLessons/'
 
-const Home: NextPage = () => {
+const Account: NextPage = () => {
   return (
     <div className="d-flex bg-light" style={{height: "100vh"}}>
       {/* TODO: Media query to have better navigation on mobile devices */}
@@ -36,4 +36,4 @@ const Home: NextPage = () => {
   )
 }
 
-export default Home;
+export default Account;

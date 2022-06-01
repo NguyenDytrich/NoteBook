@@ -17,6 +17,9 @@ const Sidebar: React.FC = () => {
           <Nav.Link><i className="bi-camera-video me-2"></i>Meeting Room</Nav.Link>
         </Nav.Item>
         <Nav.Item as="li">
+          <NavLink href="/teachers"><i className="bi-person-rolodex me-2"></i>Teacher Directory</NavLink>
+        </Nav.Item>
+        <Nav.Item as="li">
           <NavLink href="/account"><i className="bi-person-circle me-2"></i>Account & Payments</NavLink>
         </Nav.Item>
       </Nav>

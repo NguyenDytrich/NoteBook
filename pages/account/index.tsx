@@ -27,8 +27,6 @@ const Account: NextPage = () => {
                 />
                 <div className="flex-grow-1">
                   <h2>Jane Doe</h2>
-                  <Form.Label>Phone</Form.Label>
-                  <Form.Control value="(000) 000 0000"></Form.Control>
                   <Form.Label>Email</Form.Label>
                   <Form.Control value="jane.doe@gmail.com"></Form.Control>
                   <Form.Label>Password</Form.Label>
@@ -36,6 +34,8 @@ const Account: NextPage = () => {
                     <Form.Control type="password" placeholder="password" value="password"></Form.Control>
                     <InputGroup.Text><i className="bi-eye-fill opacity-75" /></InputGroup.Text>
                   </InputGroup>
+                  <Form.Label>Phone</Form.Label>
+                  <Form.Control value="(000) 000 0000"></Form.Control>
                 </div>
               </div>
               <h1>Enrollment</h1>

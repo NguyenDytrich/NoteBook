@@ -10,7 +10,7 @@ const Home: NextPage = () => {
     <div className="d-flex bg-light" style={{height: "100vh"}}>
       {/* TODO: Media query to have better navigation on mobile devices */}
       <Sidebar />
-      <Container className="py-3 h-100 pe-4">
+      <Container className="py-3 h-100 pe-4" style={{marginLeft: "20em"}}>
         <Row className="h-100">
           <Col>
             <Messages messages={[

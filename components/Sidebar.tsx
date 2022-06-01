@@ -4,7 +4,7 @@ import NavLink from "./Base/NavLink";
 const Sidebar: React.FC = () => {
   return (
     <div
-      className="d-flex flex-column flex-shrink-0 h-100 p-3 bg-body shadow-sm"
+      className="d-flex flex-column flex-shrink-0 h-100 p-3 bg-body shadow-sm fixed-top"
       style={{width: "20em"}}
     >
       <h1>NoteBook</h1>

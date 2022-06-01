@@ -3,13 +3,15 @@ import { Badge, Card, Col, Container, Form, InputGroup, Row, Table } from 'react
 import DashboardCard from '../../components/Base/DashboardCard'
 import Sidebar from '../../components/Sidebar'
 import Image from 'next/image';
+import { VictoryContainer, VictoryPie } from 'victory';
+import { VictoryTheme } from 'victory';
 
 const Account: NextPage = () => {
   return (
-    <div className="d-flex bg-light" style={{height: "100vh"}}>
+    <div className="d-flex bg-light">
       {/* TODO: Media query to have better navigation on mobile devices */}
       <Sidebar />
-      <Container className="py-3 h-100 pe-4">
+      <Container className="py-3 h-100 pe-4" style={{marginLeft: "20em"}}>
         <Row className="h-100">
           <Col>
             <DashboardCard className="p-3">
@@ -72,6 +74,52 @@ const Account: NextPage = () => {
                     </tr>
                   </tbody>
                 </Table>
+              </div>
+              <div className="d-flex">
+                <div className="w-50">
+                  <h1>Payments</h1>
+                  <span><a href="#">View Invoice</a></span>
+                  <div>
+                    <h2>Current Balance</h2>
+                    <div className="fs-1">${60 * 4 + 40 * 4 + 40 * 2}</div>
+                    <Badge bg="danger">Overdue</Badge>
+                  </div>
+                  <VictoryPie 
+                    containerComponent={
+                      <VictoryContainer style={{height: 500}} />
+                    }
+                    theme={VictoryTheme.material}
+                    data={[
+                      { x: "Jane", y: 60 * 4 },
+                      { x: "John", y: 40 * 4 },
+                      { x: "Lena", y: 40 * 2 },
+                    ]}
+                  />
+                </div>
+                <div className="flex-grow-1" style={{marginTop: "4.75rem"}}>
+                  <h2>Payment History</h2>
+                  <Table>
+                    <thead>
+                      <tr>
+                        <th>Date</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>06/01/22</td>
+                        <td>$480.00</td>
+                        <td><Badge bg="warning">Processing</Badge></td>
+                      </tr>
+                      <tr>
+                        <td>05/01/22</td>
+                        <td>$480.00</td>
+                        <td><Badge bg="success">Paid</Badge></td>
+                      </tr>
+                    </tbody>
+                  </Table>
+                </div>
               </div>
             </DashboardCard>
           </Col>

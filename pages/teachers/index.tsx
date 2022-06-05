@@ -1,8 +1,11 @@
 import { Badge, Button, Card, Col, Container, FloatingLabel, Form, InputGroup, Row } from "react-bootstrap";
 import Sidebar from "../../components/Sidebar";
-import { loremIpsum } from "lorem-ipsum";
+import SummaryCard from "../../components/Directory/SummaryCard";
+import MockPropsUtil from "../../mocks/PropsFaker";
 
 const Teachers: React.FC = () => {
+  const teachers = MockPropsUtil.summaryCard.many(20);
+
   return (
     <div className="d-flex bg-light" style={{ height: "100vh" }}>
       <Sidebar />
@@ -16,7 +19,7 @@ const Teachers: React.FC = () => {
           </InputGroup>
         </Row>
         <Row className="mb-3">
-          Popular Instruments
+          <h1 className="fs-4 mt-3">Popular Instruments</h1>
           <div className="d-flex gap-2">
             <Badge pill bg="secondary" className="px-3 fs-6">piano</Badge>
             <Badge pill bg="secondary" className="px-3 fs-6">guitar</Badge>
@@ -27,51 +30,8 @@ const Teachers: React.FC = () => {
         <Row>
           <h1>Results</h1>
         </Row>
-        <Row lg={3} className="g-4">
-          <Col>
-            <Card>
-              <Card.Body>
-                <Card.Title><h2>Louis Lane</h2></Card.Title>
-                <div className="d-flex gap-1">
-                  <Badge pill>Piano</Badge>
-                  <Badge pill>Guitar</Badge>
-                  <Badge pill>Ukulele</Badge>
-                </div>
-                <div>
-                  <h3 className="fs-3">About Me</h3>
-                  <p>{loremIpsum({
-                    count: 1,
-                    units: "paragraphs",
-                  })}</p>
-                </div>
-              </Card.Body>
-            </Card>
-          </Col>
-          <Col>
-            <Card>
-              <Card.Body>
-                <Card.Title>Daphne Lane</Card.Title>
-                <span>Trumpet | Piano</span>
-              </Card.Body>
-            </Card>
-          </Col>
-          <Col>
-            <Card>
-              <Card.Body>
-                <Card.Title>Daphne Lane</Card.Title>
-                <span>Trumpet | Piano</span>
-              </Card.Body>
-            </Card>
-          </Col>
-          <Col>
-            <Card>
-              <Card.Body>
-                <Card.Title>Daphne Lane</Card.Title>
-                <span>Trumpet | Piano</span>
-              </Card.Body>
-            </Card>
-          </Col>
-
+        <Row lg={2} sm={1} className="g-3 pb-3">
+          {teachers.map((v, i) => <Col key={i}><SummaryCard {...v} /></Col>)}
         </Row>
     </Container>
   </div>

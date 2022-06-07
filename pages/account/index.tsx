@@ -1,10 +1,12 @@
 import type { NextPage } from 'next'
-import { Badge, Card, Col, Container, Form, InputGroup, Row, Table } from 'react-bootstrap'
+import { Badge, Button, ButtonGroup, Card, Col, Container, Form, InputGroup, Row, Table } from 'react-bootstrap'
 import DashboardCard from '../../components/Base/DashboardCard'
 import Sidebar from '../../components/Sidebar'
 import Image from 'next/image';
 import { VictoryContainer, VictoryPie } from 'victory';
 import { VictoryTheme } from 'victory';
+import SecondaryAccountForm from '../../components/Accounts/SecondaryAccountForm';
+import AccountOverview from '../../components/Accounts/AccountOverview';
 
 const Account: NextPage = () => {
   return (
@@ -15,7 +17,22 @@ const Account: NextPage = () => {
         <Row className="h-100">
           <Col>
             <DashboardCard className="p-3">
-              <h1>Profile</h1>
+              <h1>Account</h1>
+              <AccountOverview primary={{
+                  name: "Jane Doe",
+                  email: "jane.doe@gmail.com"
+                }}
+
+                secondaries={[
+                  {
+                    name: "Lena Doe",
+                  },
+                  {
+                    name: "John Doe",
+                  },
+                ]}
+              />
+              {/*
               <div className="d-flex gap-5">
                 <Image
                   className="rounded"
@@ -26,7 +43,7 @@ const Account: NextPage = () => {
                   alt="Your profile picture"
                 />
                 <div className="flex-grow-1">
-                  <h2>Jane Doe</h2>
+                  <h2>Jane Doe <small className="text-muted">(primary)</small></h2>
                   <Form.Label>Email</Form.Label>
                   <Form.Control value="jane.doe@gmail.com"></Form.Control>
                   <Form.Label>Password</Form.Label>
@@ -38,6 +55,7 @@ const Account: NextPage = () => {
                   <Form.Control value="(000) 000 0000"></Form.Control>
                 </div>
               </div>
+              */}
               <h1>Enrollment</h1>
               <div>
                 <Table>

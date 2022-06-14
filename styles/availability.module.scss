@@ -1,0 +1,21 @@
+.cell {
+  text-align: center;
+
+  &.unavailable {
+    transition: background-color 0.1s ease-in-out;
+    &:hover {
+      --bs-bg-opacity: 0.8;
+      background-color: rgba(var(--bs-secondary-rgb), var(--bs-bg-opacity));
+    }
+  }
+
+  &.available {
+    // background-color: var(--bs-light);
+    background-color: #88D18A;
+    transition: background-color 0.2s ease-out;
+    &:hover {
+      background-color: #88D18Ab0;
+    }
+    width: --bs-col-7;
+  }
+}
